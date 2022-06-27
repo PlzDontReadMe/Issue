@@ -81,8 +81,8 @@ class ManagerIssueTest {
 
     @Test
     void shouldCloseIssue() {
-        manager.Close(1);
-        manager.Close(5);
+        manager.Update(1);
+        manager.Update(5);
         List<Issue> expected = List.of(issue1, issue2, issue3, issue4, issue5);
         List<Issue> actual = manager.shouldIsClose();
         assertEquals(expected, actual);
@@ -90,9 +90,9 @@ class ManagerIssueTest {
 
     @Test
     void shouldOpenIssue() {
-        manager.Open(2);
-        manager.Open(3);
-        manager.Open(4);
+        manager.Update(2);
+        manager.Update(3);
+        manager.Update(4);
         List<Issue> expected = List.of(issue1, issue2, issue3, issue4, issue5);
         List<Issue> actual = manager.shouldIsOpen();
         assertEquals(expected, actual);

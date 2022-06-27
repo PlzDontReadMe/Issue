@@ -43,17 +43,13 @@ public class ManagerIssue {
         return result;
     }
 
-    public void Close(int id) {
+    public void Update(int id) {
         Issue result = repo.findById(id);
         if (result.isOpened()) {
             result.setOpened(false);
-        }
-    }
+        } else {
+            result.setOpened(true);
 
-    public void Open(int id) {
-        Issue result1 = repo.findById(id);
-        if (!result1.isOpened()) {
-            result1.setOpened(true);
         }
     }
 

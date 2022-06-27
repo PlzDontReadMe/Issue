@@ -16,6 +16,9 @@ public class Issue {
     private String byAssignees;
     private boolean isOpened;
 
+    public void setOpened(boolean opened) {
+        isOpened = opened;
+    }
 }
 
 
